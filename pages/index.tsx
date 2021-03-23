@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { GetStaticProps } from 'next';
 
 import Layout, { siteTitle } from '../components/layout';
 import { getSortedPostsData } from '../lib/posts';
@@ -16,7 +17,7 @@ export default function Home({ allPostsData }) {
       <section>
         <p>
           Hello my nickname is Hdev, but my real name is <b>Hermerson.</b> That's my first website with Next.js! And you can find me on my{' '}
-          <a href="https://github.com/hdev14">Github</a> 
+          <a href="https://github.com/hdev14">Github</a>
         </p>
       </section>
 
@@ -41,7 +42,7 @@ export default function Home({ allPostsData }) {
   )
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData();
   return {
     props: {

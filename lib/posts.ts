@@ -19,7 +19,7 @@ export function getSortedPostsData() {
     return { id, ...matterResult.data };
   })
 
-  return allPostsData.sort((a, b) => {
+  return allPostsData.sort((a: any, b: any) => {
     if (a.date < b.date) {
       return 1;
     }
